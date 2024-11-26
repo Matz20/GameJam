@@ -5,13 +5,25 @@ using CodeMonkey.Utils;
 
 public class FieldOfView : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
+
+    private Mesh mesh;
+    private Vector3 origin;
+    private float startingAngle;
+    private float fov;
+
     private void Start()
     {
-        Mesh mesh = new Mesh();
+        mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        origin = Vector3.zero;
+        fov = 90f;
+    }
 
-        float fov = 90f;
-        Vector3 origin = Vector3.zero; 
+
+    private void LateUpdate()
+    {
+        
         int rayCount = 50;
         float angle = 0f;
         float angleIncrease = fov / rayCount;
@@ -30,7 +42,7 @@ public class FieldOfView : MonoBehaviour
         for (int i = 0; i <= rayCount; i++)
         {
             Vector3 vertex;
-            RaycastHit2D raycastHit2d = Physics2D.Raycast(origin, UtilsClass.GetVectorFromAngle(angle), viewDistance);
+            RaycastHit2D raycastHit2d = Physics2D.Raycast(origin, UtilsClass.GetVectorFromAngle(angle), viewDistance, layerMask);
 
             if (raycastHit2d.collider== null)
             { //No hit
@@ -59,14 +71,18 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.bounds = new Bounds(origin, Vector3.one * 1000f);
     }
 
-    /*
-     *  vertices[0] = Vector3.zero;
-        vertices[1] = new Vector3(5, 0);
-        vertices[2] = new Vector3(0, -5);
+    public void SetOrigin(Vector3 origin)
+    { 
+        this.origin = origin;
+    }
 
-        triangles[0] = 0;
-        triangles[1] = 1;
-        triangles[2] = 2;*/
+    public void SetAimDirection(Vector3 aimDirection)
+    {
+        startingAngle = UtilsClass.GetAngleFromVectorFloat(aimDirection) - fov / 2f;
+
+    }
+    
 }
