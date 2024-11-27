@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
     // Unity menu for setting the walk speed   
@@ -27,12 +29,21 @@ public class PlayerController : MonoBehaviour {
     // Variable for the look direction
     public Vector3 lookDirection;
 
+    [SerializeField]
+    GameObject pointer;
+
+    Animator animator;
+
     // Awake method to get the character controller and input handler and camera transform
     private void Awake() {
         characterController = GetComponent<CharacterController>();
         inputHandler = PlayerInputHandler.Instance;
         cameraTransform = Camera.main.transform.parent;
+<<<<<<< HEAD
 
+=======
+        animator = GetComponent<Animator>();
+>>>>>>> SandraBranch
     }
 
     // Update method to handle movement, attacking, picking up, and scrolling
@@ -52,15 +63,39 @@ public class PlayerController : MonoBehaviour {
 
     // Method to handle movement
     void HandleMovement() {
-        float speed = walkSpeed;
+        float xMovement = inputHandler.MoveInput.x;
+        float yMovement = inputHandler.MoveInput.y;
 
         // moveDirection is the input from the player
+<<<<<<< HEAD
         Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
         Vector3 moveDirection = new Vector3(inputDirection.x, inputDirection.y);
 
         currentMovement = moveDirection.normalized * speed;
 
+=======
+        Vector2 moveDirection = new Vector2(xMovement, yMovement);
+        currentMovement = moveDirection.normalized * walkSpeed;
+>>>>>>> SandraBranch
         characterController.Move(currentMovement * Time.deltaTime);
+
+        //The animation playing will be determined by xMovement and yMovement (Floats in range 0,1), with S_Walk, D_Walk and A_Walk being prioritized on angular walking
+        if (xMovement != 0 || yMovement != 0)
+        {
+            animator.SetBool("isWalking", true);
+            if (yMovement == 1 && xMovement == 0) // A_Walk
+            {
+                animator.SetFloat("y", 1f);
+                animator.SetFloat("x", 0);
+            }
+
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", -1);
+        }
     }
 
     // Method to handle attacking
@@ -120,16 +155,38 @@ public class PlayerController : MonoBehaviour {
 
     // Method to handle looking at the mouse position
     void HandleLooking() {
-        Debug.Log($"Looking at {inputHandler.LookInput}");
+        //Debug.Log($"Looking at {inputHandler.LookInput}");
+        //Debug.Log($"Player at {transform.position}");
         Vector2 mousePosition = inputHandler.LookInput;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         lookDirection = mouseWorldPosition - transform.position;
         lookDirection.z = 0;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+<<<<<<< HEAD
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         if (weaponEquipped != null) {
             weaponEquipped.SetLookDirection(lookDirection);
+=======
+        pointer.transform.rotation = Quaternion.Euler(0, 0, angle);
+        
+        if(angle >= -45 && angle < 45) //D direction
+        {
+            animator.SetFloat("x", 1);
+            animator.SetFloat("y", 0);
+        } else if (angle >= 45f && angle < 135f) // W direction
+        {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", 1);
+        } else if (angle >= 135f || angle < -180) // A direction
+        {
+            animator.SetFloat ("x", -1);
+            animator.SetFloat("y", 0);
+        } else if (angle < -45 && angle >= -135) // S Direction
+        {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", -1);
+>>>>>>> SandraBranch
         }
     }
 
