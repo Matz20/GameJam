@@ -8,33 +8,40 @@ public class PlayerController : MonoBehaviour {
     // Unity menu for setting the walk speed   
     [Header("Movement Speeds")]
     [SerializeField] private float walkSpeed = 3.0f;
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float projectileSpeed = 10.0f;
+    
  
     // Variable for the character controller
     private CharacterController characterController;
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
+    // Variable for the weapon
+    private Weapon weapon;
     // Variable for the current movement
     private Vector2 currentMovement;
     // Variable for the weapon to pick up
     private GameObject weaponToPickUp;
     // Variable for the weapon equipped
-    private GameObject weaponEquipped;
+    public Weapon weaponEquipped;
     // Variable for the camera transform
     private Transform cameraTransform;
     // Variable for the look direction
-    private Vector3 lookDirection;
+    public Vector3 lookDirection;
 
     // Awake method to get the character controller and input handler and camera transform
     private void Awake() {
         characterController = GetComponent<CharacterController>();
         inputHandler = PlayerInputHandler.Instance;
         cameraTransform = Camera.main.transform.parent;
+
     }
 
     // Update method to handle movement, attacking, picking up, and scrolling
     private void Update() {
+        if (inputHandler == null) {
+            Debug.LogError("PlayeInputHandler instance is not set");
+            return;
+        }
+
         HandleMovement();
         HandleAttacking();
         HandlePickUp();
@@ -48,7 +55,9 @@ public class PlayerController : MonoBehaviour {
         float speed = walkSpeed;
 
         // moveDirection is the input from the player
-        Vector2 moveDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
+        Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
+        Vector3 moveDirection = new Vector3(inputDirection.x, inputDirection.y);
+
         currentMovement = moveDirection.normalized * speed;
 
         characterController.Move(currentMovement * Time.deltaTime);
@@ -60,12 +69,10 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("Attacking");
         }
 
-        // If the attack button is pressed and the player has a weapon equipped, attack in the direction the player is looking
-        if(inputHandler.AttackTriggered && weaponEquipped != null) {
-            Debug.Log("Player is Attacking");
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
-            projectileRigidbody.velocity = lookDirection.normalized * projectileSpeed;
+        if (inputHandler.AttackTriggered && weaponEquipped != null) {
+            weaponEquipped.AttackWithEquipedWeapon();
+        } else if (weaponEquipped == null) {
+            Debug.Log("No Weapon component equipped");
         }
     }
 
@@ -85,7 +92,14 @@ public class PlayerController : MonoBehaviour {
             if(weaponCollider != null) {
                 weaponCollider.enabled = false;
             }
-            weaponEquipped = weaponToPickUp;
+            if (weaponEquipped != null) {
+                weaponEquipped.transform.SetParent(null);
+                weaponEquipped.GetComponent<Collider>().enabled = true;
+                weaponEquipped.transform.position = weaponToPickUp.transform.position;
+
+
+            }
+            weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
             weaponToPickUp = null;
         }
 
@@ -113,6 +127,10 @@ public class PlayerController : MonoBehaviour {
         lookDirection.z = 0;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        if (weaponEquipped != null) {
+            weaponEquipped.SetLookDirection(lookDirection);
+        }
     }
 
     // Method to update the camera position to follow the player
