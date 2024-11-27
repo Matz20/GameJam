@@ -5,6 +5,7 @@ using UnityEngine;
 public class Playercontroller : MonoBehaviour
 {
 
+    public HealthBar healthBar; // health bar for the player
     public float moveSpeed = 5f;
     public Rigidbody2D rb; 
     public weapon weapon;
@@ -12,7 +13,10 @@ public class Playercontroller : MonoBehaviour
     Vector2 moveDirection;
     Vector2 mousePosition;
 
-    // Update is called once per frame
+    void Start()
+    {
+        healthBar.SetMaxHealth(100); // set the max health of the player to 100
+    }
     void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal"); 
