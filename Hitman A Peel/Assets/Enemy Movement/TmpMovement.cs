@@ -11,7 +11,7 @@ public class TmpMovement : MonoBehaviour
 
     public float runSpeed = 20.0f;
 
-    [SerializeField] private FieldOfView fieldOfView;
+    //[SerializeField] private FieldOfView fieldOfView;
 
     void Start()
     {
@@ -27,6 +27,6 @@ public class TmpMovement : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        fieldOfView.SetOrigin(transform.position);
+       // fieldOfView.SetOrigin(transform.position);
     }
 }

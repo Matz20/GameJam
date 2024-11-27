@@ -10,7 +10,10 @@ public class Patrol : MonoBehaviour
 
     public Transform[] moveSpots;
     private int randomSpots;
-    private Vector2 direction;
+    private Vector3 direction;
+
+    [SerializeField] private FieldOfView fieldOfView;
+
     private void Start()
     {
         waitTime = startWaitTime;
@@ -20,14 +23,15 @@ public class Patrol : MonoBehaviour
 
     private void Update()
     {
+        lookAt();
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpots].position,speed * Time.deltaTime);
+        fieldOfView.SetOrigin(transform.position);
 
         if (Vector2.Distance(transform.position,moveSpots[randomSpots].position)< 0.2f)
         {
             if (waitTime <= 0)
             {
                 
-                lookAt();
                 randomSpots = Random.Range(0, moveSpots.Length);
                 waitTime = startWaitTime;
             }
@@ -41,10 +45,11 @@ public class Patrol : MonoBehaviour
     }
     private void lookAt()
     {
-        direction = moveSpots[randomSpots].position;
+        direction = moveSpots[randomSpots].position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = rotation;
+        fieldOfView.SetAimDirection(direction);
     }
 
 }
