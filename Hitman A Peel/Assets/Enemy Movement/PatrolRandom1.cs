@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolRandom : MonoBehaviour
+public class PatrolRandom1 : MonoBehaviour
 {
     public float speed;
     private float waitTime;
