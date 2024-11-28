@@ -60,16 +60,18 @@ public class PlayerController : MonoBehaviour {
 
     // Method to handle movement
     void HandleMovement() {
-        float xMovement = inputHandler.MoveInput.x;
-        float yMovement = inputHandler.MoveInput.y;
+        //float xMovement = inputHandler.MoveInput.x;
+        //float yMovement = inputHandler.MoveInput.y;
 
-        // moveDirection is the input from the player
-        Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
-        Vector3 moveDirection = new Vector3(inputDirection.x, inputDirection.y);
+        //// moveDirection is the input from the player
+        //Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
+        //Vector3 moveDirection = new Vector3(inputDirection.x, inputDirection.y);
 
-        currentMovement = moveDirection.normalized * speed;
+        //currentMovement = moveDirection.normalized * speed;
 
-        rb2d.transform.position += new Vector3(currentMovement.x, currentMovement.y, 0) * Time.deltaTime;
+        //rb2d.transform.position += new Vector3(currentMovement.x, currentMovement.y, 0) * Time.deltaTime;
+
+        
     }
 
     // Method to handle attacking
