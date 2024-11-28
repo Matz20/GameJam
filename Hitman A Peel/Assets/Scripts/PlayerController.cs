@@ -17,22 +17,25 @@ public class PlayerController : MonoBehaviour {
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
     // Variable for the weapon
-    private Weapon weapon;
+    //private Weapon weapon;
     // Variable for the current movement
     private Vector2 currentMovement;
     // Variable for the weapon to pick up
     private GameObject weaponToPickUp;
     // Variable for the weapon equipped
-    public Weapon weaponEquipped;
+    //public Weapon weaponEquipped;
     // Variable for the camera transform
     private Transform cameraTransform;
-    // Variable for the look direction
-    public Vector3 lookDirection;
 
     [SerializeField]
     GameObject pointer;
 
     Animator animator;
+
+    // Variable for the look direction
+    public Vector3 lookDirection;
+
+
 
     // Awake method to get the character controller and input handler and camera transform
     private void Awake() {
@@ -50,7 +53,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         HandleMovement();
-        HandleAttacking();
+        //HandleAttacking();
         HandlePickUp();
         HandleScrolling();
         HandleLooking();
@@ -86,18 +89,18 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // Method to handle attacking
-    void HandleAttacking() {
-        if(inputHandler.AttackTriggered) {
-            Debug.Log("Attacking");
-        }
+    //// Method to handle attacking
+    //void HandleAttacking() {
+    //    if(inputHandler.AttackTriggered) {
+    //        Debug.Log("Attacking");
+    //    }
 
-        if (inputHandler.AttackTriggered && weaponEquipped != null) {
-            weaponEquipped.AttackWithEquipedWeapon();
-        } else if (weaponEquipped == null) {
-            Debug.Log("No Weapon component equipped");
-        }
-    }
+    //    if (inputHandler.AttackTriggered && weaponEquipped != null) {
+    //        weaponEquipped.AttackWithEquipedWeapon();
+    //    } else if (weaponEquipped == null) {
+    //        Debug.Log("No Weapon component equipped");
+    //    }
+    //}
 
     // Method to handle picking up things
     void HandlePickUp() {
@@ -115,15 +118,15 @@ public class PlayerController : MonoBehaviour {
             if(weaponCollider != null) {
                 weaponCollider.enabled = false;
             }
-            if (weaponEquipped != null) {
-                weaponEquipped.transform.SetParent(null);
-                weaponEquipped.GetComponent<Collider>().enabled = true;
-                weaponEquipped.transform.position = weaponToPickUp.transform.position;
+            //if (weaponEquipped != null) {
+            //    weaponEquipped.transform.SetParent(null);
+            //    weaponEquipped.GetComponent<Collider>().enabled = true;
+            //    weaponEquipped.transform.position = weaponToPickUp.transform.position;
 
 
-            }
-            weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
-            weaponToPickUp = null;
+            //}
+            //weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
+            //weaponToPickUp = null;
         }
 
         
@@ -160,7 +163,7 @@ public class PlayerController : MonoBehaviour {
         {
             animator.SetFloat("x", 0);
             animator.SetFloat("y", 1);
-        } else if (angle >= 135f || angle < -180) // A direction
+        } else if (angle <= -135f || angle > 135f) // A direction
         {
             animator.SetFloat ("x", -1);
             animator.SetFloat("y", 0);

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1368635189335706815}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4629779, y: -0.273861, z: 0.00060619554}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120,5 +120,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 3242446308879357542, guid: e73d39d9996fc004eac1e1c7f0ca9c1c, type: 3}
   DeadBanana: {fileID: 21300000, guid: c1312bd05bd73344fa1a42d8cc4fd58d, type: 3}

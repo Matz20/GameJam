@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6ffce0435d0bd0c48a78ef8676762d9d
+guid: 66bae3d41f1793341b3fdba4ce4e3e8b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: John Slick_0
+      name: Unarmed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49506a4bb6fcee844a0a3f482d791ea1
+      internalID: 1462293001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819301dadf369a149a13ce0423afc5a7
+      internalID: 2066215738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_2
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 656a7b6c9d8b0124b822bdcfb7051e50
-      internalID: 802622699
+      spriteID: e3813e4672924d24b9c532fa1e82d2da
+      internalID: -1987775233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_1
+      name: Unarmed_3
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +174,182 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b2beb8e838c5e94ca6dfaa8e211cf0a
-      internalID: 610279851
+      spriteID: a1976f5e4cff8db4c839a8f304af4f10
+      internalID: -1741753686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_2
+      name: Unarmed_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9206f2d53f612274c824cbfc4b349f5b
+      internalID: 642276238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924b41ed75613744592477b240814cfc
+      internalID: 1242256775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781a3be36e3d5ae43b27378f0d0f3a54
+      internalID: 1906672498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e77b6ef53a76b4f89c2db271ef3005
+      internalID: 1718459316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08d8fcd3cab9d84aaa633bb06b11eb5
+      internalID: 740827458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246abad7a26bf3c4fa1f35c944d0f7b4
+      internalID: -904756393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678906fdb984a4f4b8f6a0a50df5323d
+      internalID: -1339474446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d5b3fc383e8104aa41d6ca48ccb1a4
+      internalID: -653850411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_12
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b2a14f88f73fcd49bfc23373c41a8fb
-      internalID: 1993051270
+      spriteID: ed33a9b58be262847971d450ef7b9abf
+      internalID: -780547133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_3
+      name: Unarmed_13
       rect:
         serializedVersion: 2
         x: 32
@@ -174,182 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe77938b136ea4438034945c1d3c338
-      internalID: -732741991
+      spriteID: 6c9b2c40e7d7cc949bf825576451d699
+      internalID: 1028476851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e725ed429087e8489110f0abe257e85
-      internalID: 1903365032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_5
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5605f33b15e237247ba9a3c294224768
-      internalID: 876312338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_6
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bafc4eb325bd4824fa64a16567d83659
-      internalID: 1627166088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_7
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 023fc723b149fef4898ed606c50bc5dd
-      internalID: 69693671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_8
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6532cb10826a9334ebc32aeb44cc2607
-      internalID: -1767572732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_9
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 924cc193b2a685d4a98b10f4b68c90e3
-      internalID: 88317031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_10
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71fd5811fefd14e4083a64398ed483c8
-      internalID: -1099825524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_11
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 193
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43bc7a10601db4a4b878213f522b10a7
-      internalID: -1785978280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_12
+      name: Unarmed_14
       rect:
         serializedVersion: 2
         x: 0
@@ -363,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c6c310dd8c008446a93e701031b64fd
-      internalID: 1683963965
+      spriteID: 1162399e5ddff6c4e8a392ac779044a1
+      internalID: 19581529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_13
+      name: Unarmed_15
       rect:
         serializedVersion: 2
         x: 32
@@ -384,14 +426,182 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39f2a3fd10e9f7e4590433b6df9ed105
-      internalID: -812780398
+      spriteID: e2380b299c4b2b94baa3192766a3d0ce
+      internalID: 1407179454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_14
+      name: Unarmed_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed5aaf76bbfbbd4fb9c87ad1e4e47ca
+      internalID: -173979718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df236cef155a3c438b4c68e90c5e538
+      internalID: 973779071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbc1ae9235d8fa428efa1db91130e02
+      internalID: -519787819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f01041a0150efb4f8fea8172dc151e9
+      internalID: 1745756951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f473f42cbf8d549a2c2724e9d4aa4c
+      internalID: 1550293276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_21
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01113bb7198fd8741a2dc256ffd3186a
+      internalID: -1616361597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d51dbda649065a4a90e3ec351f026a4
+      internalID: -604065477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_23
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec036ab2ca42fa4097c1d8481820734
+      internalID: -746681787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_24
       rect:
         serializedVersion: 2
         x: 0
@@ -405,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c37b112634d696e458cfe038a1951014
-      internalID: 318979412
+      spriteID: 9526c53c5cbe6c24da262e2296e81d9f
+      internalID: -1510379168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_15
+      name: Unarmed_25
       rect:
         serializedVersion: 2
         x: 32
@@ -426,182 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3900487885b12ef48865b7cae95cd8a0
-      internalID: -213455631
+      spriteID: f5a5e78180591fe4e8f49f92c8fdf512
+      internalID: -649808559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_16
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba67c8827b202634c8ea41225aa28244
-      internalID: 956645377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_17
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1ed7e565ea4e8c41b691404bf7f83d6
-      internalID: 1652007928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_18
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 864aa868405d9d74594a1a3d387a0890
-      internalID: -508540490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_19
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b651cd861ec01248b22ea4da83170b8
-      internalID: -1905228908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_20
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4c7f9d6c466ad749bd88da2a843a342
-      internalID: 432854601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_21
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ea6a112ef206e346abb56bd1254c1ff
-      internalID: 572681020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_22
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c355cad387a6b544fb9e4db4588ddd7d
-      internalID: -1771775078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_23
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2103eb889cf8b2b4eb55d63ac39226fb
-      internalID: -18277351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_24
+      name: Unarmed_26
       rect:
         serializedVersion: 2
         x: 0
@@ -615,14 +657,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1817ded1cef684b87658095cbabc88
-      internalID: 1900752193
+      spriteID: d7ee357be332a154abb184c479082c59
+      internalID: 577725850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_25
+      name: Unarmed_27
       rect:
         serializedVersion: 2
         x: 32
@@ -636,14 +678,182 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fb698d15fed3d74f87abc2e4ca41574
-      internalID: 1640613060
+      spriteID: 6c7139ee18434794994c5ecb8eb84615
+      internalID: 1875558778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_26
+      name: Unarmed_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e79000746a2c634bbb08a0fedd8396c
+      internalID: -1119434324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751643e72d01b2b448bdb51e7037a3de
+      internalID: 1581671402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97743cd86bab30842bd6af0b196cb95c
+      internalID: 754275088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_31
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43164dc89b2cff4cac1a9b298ce614b
+      internalID: 859892143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831d105758dcdbf4eb996ede81fc9d1d
+      internalID: -1597441213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_33
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f31eec57fc27434abb3bd6b7cce5084
+      internalID: -244212050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7958be006817d46af0e964349a2ca7
+      internalID: 1014336786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_35
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cd2202c1856ee4999b3e1dfd999c3f
+      internalID: 1723995370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_36
       rect:
         serializedVersion: 2
         x: 0
@@ -657,14 +867,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b42231f9bc651448b8b83982fba5a4d
-      internalID: 647627455
+      spriteID: 1feb6d5b9ec2ae64684ed0140d062656
+      internalID: -1936809718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_27
+      name: Unarmed_37
       rect:
         serializedVersion: 2
         x: 32
@@ -678,182 +888,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 844a49a710177254b822c09940e2c983
-      internalID: -1667477246
+      spriteID: 442ad49f62d709a41a308a67e07df793
+      internalID: 1229468289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_28
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7b19f6231ec0fb47a687fd0ed0cd9cb
-      internalID: -1288406854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_29
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fe86f4fb44bf084b9994a0d7573502c
-      internalID: 473288830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_30
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85b206b2d7542a04d89ac3c46cd9bb59
-      internalID: 763105306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_31
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78ad4efdfebe6b2418cc232ae7b7defe
-      internalID: -988484193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_32
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88a0dede5e4ffcf45896a7b21c7c400d
-      internalID: -1496742787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_33
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e5331fc1b01af743bbead6fc1d2573c
-      internalID: -557717758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_34
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c17f654d55ff02048852ae1075cff5a4
-      internalID: 178359262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_35
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db08c1f2fdb1abf40b8c86d62539d51b
-      internalID: 589435124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_36
+      name: Unarmed_38
       rect:
         serializedVersion: 2
         x: 0
@@ -867,14 +909,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35614a0c804aa3b4bb9f798120774bb2
-      internalID: -952848662
+      spriteID: 2c83b20cb5749684e99ba175bead1b10
+      internalID: 906418972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_37
+      name: Unarmed_39
       rect:
         serializedVersion: 2
         x: 32
@@ -888,14 +930,182 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9359b3d95d9a2a140865eb4cc089178a
-      internalID: -1652431940
+      spriteID: 0333a22bbabe2cf4e844631790a2a471
+      internalID: 282615124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_38
+      name: Unarmed_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2484f2bb4dc31749a5768ea5c6f3691
+      internalID: -832121217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_41
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df23f14b08c6dd14daa42c6187b434c5
+      internalID: -352632464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a90ddee325ae94b80548494d6381d9
+      internalID: -625190344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_43
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3df65ee82819d24b98a6884dc0e41dd
+      internalID: 1648124088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e1908ffc92b194fb8c8122443a423e
+      internalID: -1745812191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_45
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6ed11fa2c8d0d40af5be0f8d3d8e3a
+      internalID: 130619746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9284deebc9f96b4fb7e88ba7044e965
+      internalID: -1285999307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_47
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99706644bcbfc24e8878ab7e885ffe0
+      internalID: 435439022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unarmed_48
       rect:
         serializedVersion: 2
         x: 0
@@ -909,14 +1119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78fd502b15a938d4e8f9535cc77309e8
-      internalID: 1598063584
+      spriteID: 583e1c91b1c94574dba99d8e95a521ba
+      internalID: 672956602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_39
+      name: Unarmed_49
       rect:
         serializedVersion: 2
         x: 32
@@ -930,14 +1140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 050a364b070f53542b9cd56bf6923b31
-      internalID: -1724961467
+      spriteID: b6ca193b55c15784f81c4e30d35fa644
+      internalID: 1363252580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: John Slick_40
+      name: Unarmed_50
       rect:
         serializedVersion: 2
         x: 64
@@ -951,155 +1161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db4461479f0a0aa41990ebe7eafd3e89
-      internalID: -135269101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_41
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 801fea5607096e84ba2c7cd79a2019f6
-      internalID: -889345698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_42
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b76e684a0df59549aae23826b89db5e
-      internalID: -1669056474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_43
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fbe5e99a83b4144cab2ed4d0fb96814
-      internalID: -976571518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_44
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29de1d47c84196f48beb9f28f5bb26bf
-      internalID: 324193345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_45
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94dd08d97690cb443942af72d32f0187
-      internalID: -870159656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_46
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d942ee12935b4654bb607b04041210f7
-      internalID: -1000794753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: John Slick_47
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5cb26c930a85b542a61826c304459f2
-      internalID: -966149052
+      spriteID: 594d403e945b11e44964780b22d688c5
+      internalID: 1931835614
       vertices: []
       indices: 
       edges: []
@@ -1115,54 +1178,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      John Slick_0: 802622699
-      John Slick_1: 610279851
-      John Slick_10: -1099825524
-      John Slick_11: -1785978280
-      John Slick_12: 1683963965
-      John Slick_13: -812780398
-      John Slick_14: 318979412
-      John Slick_15: -213455631
-      John Slick_16: 956645377
-      John Slick_17: 1652007928
-      John Slick_18: -508540490
-      John Slick_19: -1905228908
-      John Slick_2: 1993051270
-      John Slick_20: 432854601
-      John Slick_21: 572681020
-      John Slick_22: -1771775078
-      John Slick_23: -18277351
-      John Slick_24: 1900752193
-      John Slick_25: 1640613060
-      John Slick_26: 647627455
-      John Slick_27: -1667477246
-      John Slick_28: -1288406854
-      John Slick_29: 473288830
-      John Slick_3: -732741991
-      John Slick_30: 763105306
-      John Slick_31: -988484193
-      John Slick_32: -1496742787
-      John Slick_33: -557717758
-      John Slick_34: 178359262
-      John Slick_35: 589435124
-      John Slick_36: -952848662
-      John Slick_37: -1652431940
-      John Slick_38: 1598063584
-      John Slick_39: -1724961467
-      John Slick_4: 1903365032
-      John Slick_40: -135269101
-      John Slick_41: -889345698
-      John Slick_42: -1669056474
-      John Slick_43: -976571518
-      John Slick_44: 324193345
-      John Slick_45: -870159656
-      John Slick_46: -1000794753
-      John Slick_47: -966149052
-      John Slick_5: 876312338
-      John Slick_6: 1627166088
-      John Slick_7: 69693671
-      John Slick_8: -1767572732
-      John Slick_9: 88317031
+      Unarmed_0: 1462293001
+      Unarmed_1: 2066215738
+      Unarmed_10: -1339474446
+      Unarmed_11: -653850411
+      Unarmed_12: -780547133
+      Unarmed_13: 1028476851
+      Unarmed_14: 19581529
+      Unarmed_15: 1407179454
+      Unarmed_16: -173979718
+      Unarmed_17: 973779071
+      Unarmed_18: -519787819
+      Unarmed_19: 1745756951
+      Unarmed_2: -1987775233
+      Unarmed_20: 1550293276
+      Unarmed_21: -1616361597
+      Unarmed_22: -604065477
+      Unarmed_23: -746681787
+      Unarmed_24: -1510379168
+      Unarmed_25: -649808559
+      Unarmed_26: 577725850
+      Unarmed_27: 1875558778
+      Unarmed_28: -1119434324
+      Unarmed_29: 1581671402
+      Unarmed_3: -1741753686
+      Unarmed_30: 754275088
+      Unarmed_31: 859892143
+      Unarmed_32: -1597441213
+      Unarmed_33: -244212050
+      Unarmed_34: 1014336786
+      Unarmed_35: 1723995370
+      Unarmed_36: -1936809718
+      Unarmed_37: 1229468289
+      Unarmed_38: 906418972
+      Unarmed_39: 282615124
+      Unarmed_4: 642276238
+      Unarmed_40: -832121217
+      Unarmed_41: -352632464
+      Unarmed_42: -625190344
+      Unarmed_43: 1648124088
+      Unarmed_44: -1745812191
+      Unarmed_45: 130619746
+      Unarmed_46: -1285999307
+      Unarmed_47: 435439022
+      Unarmed_48: 672956602
+      Unarmed_49: 1363252580
+      Unarmed_5: 1242256775
+      Unarmed_50: 1931835614
+      Unarmed_6: 1906672498
+      Unarmed_7: 1718459316
+      Unarmed_8: 740827458
+      Unarmed_9: -904756393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

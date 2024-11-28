@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 {
     [Header("Weapon Stats")]
     // Variable for the weapon's damage
-    [SerializeField] private float damage = 10.0f;
+    //[SerializeField] private float damage = 10.0f;
     // Variable for the weapon's range
     [SerializeField] private float range = 10.0f;
     // Variable for the weapon's fire rate

@@ -12,6 +12,7 @@ public class Fjende : MonoBehaviour
 
     [SerializeField]
     Sprite DeadBanana;
+    [SerializeField]
     bool IsDead = false;
     Animator animator;
 
@@ -21,15 +22,16 @@ public class Fjende : MonoBehaviour
         healthBar.SetMaxHealth(100);
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        TakeDamage(101f);
-
     }
 
     private void Update()
     {
-        if (health <= 0)
+        if(health <= 0)
         {
             IsDead = true;
+        }
+        if (IsDead)
+        {
             animator.enabled = false;
             spriteRenderer.sprite = DeadBanana;
         }
@@ -38,7 +40,5 @@ public class Fjende : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-        
     }
-  
 }
