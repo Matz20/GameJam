@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Weapon
   - Enemy
+  - Hideout
   layers:
   - Default
   - TransparentFX
@@ -40,21 +41,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sprite Background
+    uniqueID: 1177241463
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: New Layer 1
+    uniqueID: 3944638455
+    locked: 0
   - name: Background
-    uniqueID: 2020531375
+    uniqueID: 1286728349
     locked: 0
   - name: Player
-    uniqueID: 124377255
+    uniqueID: 458718083
     locked: 0
   - name: Foreground
-    uniqueID: 3715682463
+    uniqueID: 3919943125
     locked: 0
-  - name: New Layer 4
-    uniqueID: 2558612147
-    locked: 0
-  - name: New Layer 5
-    uniqueID: 2450246651
+  - name: Super Foreground
+    uniqueID: 215674991
     locked: 0

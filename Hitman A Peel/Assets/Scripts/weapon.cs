@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -26,7 +25,7 @@ public class Weapon : MonoBehaviour
     }
 
     // Method to handle attacking
-    public void AttackWithEquipedWeapon() {
+    public void AttackWithEquipedWeapon(Vector3 aimDir) {
         if(Time.time >= nextTimeToFire) {
             nextTimeToFire = Time.time + 1.0f / fireRate;
 
@@ -34,12 +33,14 @@ public class Weapon : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
             if (projectileRigidbody != null) {
-                projectileRigidbody.velocity = lookDirection.normalized * projectileSpeed;
+                projectileRigidbody.velocity = aimDir.normalized * projectileSpeed;
             }
             
             StartCoroutine(DestroyProjectileAfterRange(projectile));
         }
     }
+
+    
 
     // Method to destroy the projectile after it reaches the range
     private IEnumerator DestroyProjectileAfterRange(GameObject projectile) {
@@ -49,6 +50,8 @@ public class Weapon : MonoBehaviour
             Destroy(projectile);
         }
     }
+
+  
 
     public void SetLookDirection(Vector3 lookDirection) {
         this.lookDirection = lookDirection;
