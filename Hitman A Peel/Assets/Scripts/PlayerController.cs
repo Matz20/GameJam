@@ -39,11 +39,7 @@ public class PlayerController : MonoBehaviour {
         characterController = GetComponent<CharacterController>();
         inputHandler = PlayerInputHandler.Instance;
         cameraTransform = Camera.main.transform.parent;
-<<<<<<< HEAD
-
-=======
         animator = GetComponent<Animator>();
->>>>>>> SandraBranch
     }
 
     // Update method to handle movement, attacking, picking up, and scrolling
@@ -67,16 +63,8 @@ public class PlayerController : MonoBehaviour {
         float yMovement = inputHandler.MoveInput.y;
 
         // moveDirection is the input from the player
-<<<<<<< HEAD
-        Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
-        Vector3 moveDirection = new Vector3(inputDirection.x, inputDirection.y);
-
-        currentMovement = moveDirection.normalized * speed;
-
-=======
         Vector2 moveDirection = new Vector2(xMovement, yMovement);
         currentMovement = moveDirection.normalized * walkSpeed;
->>>>>>> SandraBranch
         characterController.Move(currentMovement * Time.deltaTime);
 
         //The animation playing will be determined by xMovement and yMovement (Floats in range 0,1), with S_Walk, D_Walk and A_Walk being prioritized on angular walking
@@ -162,12 +150,6 @@ public class PlayerController : MonoBehaviour {
         lookDirection = mouseWorldPosition - transform.position;
         lookDirection.z = 0;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-<<<<<<< HEAD
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        if (weaponEquipped != null) {
-            weaponEquipped.SetLookDirection(lookDirection);
-=======
         pointer.transform.rotation = Quaternion.Euler(0, 0, angle);
         
         if(angle >= -45 && angle < 45) //D direction
@@ -186,7 +168,6 @@ public class PlayerController : MonoBehaviour {
         {
             animator.SetFloat("x", 0);
             animator.SetFloat("y", -1);
->>>>>>> SandraBranch
         }
     }
 
