@@ -18,8 +18,8 @@ public class Weapon : MonoBehaviour
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
     // Variable for the weapon's next time to fire
-    private float nextTimeToFire = 0.0f;
-    private Vector3 lookDirection;
+    [SerializeField] private float nextTimeToFire = 0.0f;
+    [SerializeField]private Vector3 lookDirection;
     private void Awake() {
         inputHandler = PlayerInputHandler.Instance;
     }

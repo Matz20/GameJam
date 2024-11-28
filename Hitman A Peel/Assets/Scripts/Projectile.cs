@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
-    [SerializeField] float DMG;
+    
 
     void Start() { 
     
@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour {
         if (collision.collider.CompareTag("Enemy")) {
             Debug.Log("Projectile hit enemy");
             Destroy(gameObject);
+            GameObject.Destroy(gameObject);
         }
     }
 }
