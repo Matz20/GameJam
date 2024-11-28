@@ -5,17 +5,10 @@ using UnityEngine;
 public class CustomizableCharacter : MonoBehaviour
 {
     [SerializeField]
-    bool EnemyCostume = false;
+    GameObject costume, arms;
 
-    [SerializeField]
-    GameObject Costume, Arms;
+    public int skinNr, weaponsNr, currentSprite;
 
-    public int skinNr, armsNr, currentSprite;
-
-    // This is where your spritesheets go
-    // In the inspector, set the size to, for example 5, if you have 5 spritesheets
-    // Then open each individual element and add the individual sprites from the spritesheets in here
-    // This means if your spritesheet has 10 frames, the Sprites element in the inspector needs to contain these 10 sprites
     public Skins[] skins;
     public Weaponry[] weapons;
 
@@ -26,16 +19,20 @@ public class CustomizableCharacter : MonoBehaviour
 
     void Start()
     {
-        costumeSpriteRenderer = Costume.GetComponent<SpriteRenderer>();
-        armsSpriteRenderer = Arms.GetComponent<SpriteRenderer>();
+        costumeSpriteRenderer = costume.GetComponent<SpriteRenderer>();
+        armsSpriteRenderer = arms.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         currentSprite = int.Parse(spriteRenderer.sprite.name.Split('_')[1]);
+
         if (skinNr > skins.Length - 1) skinNr = 0;
         else if (skinNr < 0) skinNr = skins.Length - 1;
+        if (weaponsNr > weapons.Length - 1) weaponsNr = 0;
+        else if (weaponsNr < 0) weaponsNr = weapons.Length - 1;
+
     }
 
     void LateUpdate()
@@ -51,7 +48,7 @@ public class CustomizableCharacter : MonoBehaviour
 
     void WeaponryChoice(SpriteRenderer SPR)
     {
-        SPR.sprite = weapons[armsNr].sprites[currentSprite];
+        SPR.sprite = weapons[weaponsNr].sprites[currentSprite];
     }
 }
 
