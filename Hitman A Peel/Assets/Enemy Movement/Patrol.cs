@@ -14,12 +14,11 @@ public class Patrol : MonoBehaviour
     public float speed;
     private float waitTime;
     public float startWaitTime;
-
+    public Weapon weaponEquipped;
     public GameObject player;
     public float targetRange; 
     public float attackRange;
-    private float nextShootTime;
-    public float fireRate;
+   
 
     public Transform[] moveSpots;
     private int randomSpots;
@@ -52,16 +51,15 @@ public class Patrol : MonoBehaviour
                 Chasing();
                 break;
             case State.Attacking:
-                if (Time.time > nextShootTime)
-                {
+                
                     lookAt(player.transform);
+                    weaponEquipped.AttackWithEquipedWeapon(direction);
                     Debug.Log("Is attacking");
-                    nextShootTime = Time.time + fireRate;
                     if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
                     {
                         state = State.Chasing;
                     }
-                }
+                
                 break;
             default:
                 break;
