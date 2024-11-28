@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PatrolRandom : MonoBehaviour
 {
-    public float speed;
-    private float waitTime;
-    public float startWaitTime;
+    [SerializeField] private float speed;
+    [SerializeField] private float waitTime;
+    [SerializeField] private float startWaitTime;
 
-    public Transform moveSpot;
+    [SerializeField] private Transform moveSpot;
 
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minY;
+    [SerializeField] private float maxY;
 
     private void Start()
     {
