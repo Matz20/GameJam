@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour {
     void HandleAttacking() {
         if (inputHandler.AttackTriggered && weaponEquipped != null) {
             Debug.Log($"Attacking with weapon {weaponEquipped.name}");
-            weaponEquipped.AttackWithEquipedWeapon();
+            weaponEquipped.AttackWithEquipedWeapon(lookDirection);
         }
     }
 
