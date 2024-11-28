@@ -15,7 +15,9 @@ public class Patrol : MonoBehaviour
     [SerializeField] private float waitTime;
     [SerializeField] private float startWaitTime;
     [SerializeField] private Weapon weaponEquipped;
-    public GameObject hero;
+    public GameObject hero; 
+    public Disguise dis;
+    [SerializeField] private int minDisLvl;
     [SerializeField] private float targetRange;
     [SerializeField] private float attackRange;
 
@@ -100,7 +102,7 @@ public class Patrol : MonoBehaviour
     private void FindTarget()
     {
         
-        if (Vector3.Distance(transform.position, hero.transform.position) < targetRange)
+        if (Vector3.Distance(transform.position, hero.transform.position) < targetRange && dis.disguiseLvl < minDisLvl)
         {
             state = State.Chasing;
             

@@ -592,6 +592,8 @@ GameObject:
   - component: {fileID: 1712803672}
   - component: {fileID: 1712803671}
   - component: {fileID: 1712803674}
+  - component: {fileID: 1712803676}
+  - component: {fileID: 1712803675}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -707,6 +709,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1712803675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712803670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e78f962e3b51e949a49d396edf30d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disguiseLvl: 0
+  state: 0
+--- !u!114 &1712803676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712803670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e78f962e3b51e949a49d396edf30d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disguiseLvl: 0
+  state: 0
 --- !u!1 &1845254480
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +968,10 @@ PrefabInstance:
       value: PatrolEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 2557854821368640210, guid: 5a728a23d89817c4fa627b25aba3ea46, type: 3}
+      propertyPath: dis
+      value: 
+      objectReference: {fileID: 1712803676}
+    - target: {fileID: 2557854821368640210, guid: 5a728a23d89817c4fa627b25aba3ea46, type: 3}
       propertyPath: hero
       value: 
       objectReference: {fileID: 1712803670}
@@ -948,6 +982,10 @@ PrefabInstance:
     - target: {fileID: 2557854821368640210, guid: 5a728a23d89817c4fa627b25aba3ea46, type: 3}
       propertyPath: waitTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557854821368640210, guid: 5a728a23d89817c4fa627b25aba3ea46, type: 3}
+      propertyPath: minDisLvl
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2557854821368640210, guid: 5a728a23d89817c4fa627b25aba3ea46, type: 3}
       propertyPath: attackRange
