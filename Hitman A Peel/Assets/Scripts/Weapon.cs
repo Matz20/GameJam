@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
 {
     [Header("Weapon Stats")]
     // Variable for the weapon's damage
-    //[SerializeField] private float damage = 10.0f;
+    [SerializeField] private float damage = 10.0f;
     // Variable for the weapon's range
     [SerializeField] private float range = 10.0f;
     // Variable for the weapon's fire rate
@@ -18,8 +18,8 @@ public class Weapon : MonoBehaviour
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
     // Variable for the weapon's next time to fire
-    private float nextTimeToFire = 0.0f;
-    private Vector3 lookDirection;
+    [SerializeField] private float nextTimeToFire = 0.0f;
+    [SerializeField]private Vector3 lookDirection;
     private void Awake() {
         inputHandler = PlayerInputHandler.Instance;
     }

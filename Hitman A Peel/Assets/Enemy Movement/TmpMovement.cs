@@ -7,9 +7,10 @@ using CodeMonkey.MonoBehaviours;
 public class TmpMovement : MonoBehaviour
 {
     public static TmpMovement Instance { get; private set; }
+    private PlayerInputHandler inputHandler;
 
     Rigidbody2D body;
-
+    [SerializeField] private Weapon weaponEquipped;
     float horizontal;
     float vertical;
 
@@ -19,7 +20,7 @@ public class TmpMovement : MonoBehaviour
 
     private void Awake()
     {
-        
+        inputHandler = PlayerInputHandler.Instance;
     }
 
     void Start()
@@ -31,6 +32,12 @@ public class TmpMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        if (inputHandler.AttackTriggered && weaponEquipped != null)
+        {
+            Debug.Log($"Attacking with weapon {weaponEquipped.name}");
+           // weaponEquipped.AttackWithEquipedWeapon(transform.position);
+        }
+
     }
 
     private void FixedUpdate()
