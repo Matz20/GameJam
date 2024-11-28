@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,6 +20,7 @@ public class Weapon : MonoBehaviour
     // Variable for the weapon's next time to fire
     private float nextTimeToFire = 0.0f;
     private Vector3 lookDirection;
+    public Weapon weaponEquipped;
     private void Awake() {
         inputHandler = PlayerInputHandler.Instance;
     }
@@ -41,6 +41,8 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    
+
     // Method to destroy the projectile after it reaches the range
     private IEnumerator DestroyProjectileAfterRange(GameObject projectile) {
         float rangeTravel = range / projectileSpeed;
@@ -49,6 +51,8 @@ public class Weapon : MonoBehaviour
             Destroy(projectile);
         }
     }
+
+  
 
     public void SetLookDirection(Vector3 lookDirection) {
         this.lookDirection = lookDirection;
