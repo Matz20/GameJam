@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -11,11 +8,9 @@ public class PlayerController : MonoBehaviour {
     
  
     // Variable for the character controller
-    private CharacterController characterController;
+    private Rigidbody2D rb2d;
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
-    // Variable for the weapon
-    private Weapon weapon;
     // Variable for the current movement
     private Vector2 currentMovement;
     // Variable for the weapon to pick up
@@ -29,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 
     // Awake method to get the character controller and input handler and camera transform
     private void Awake() {
-        characterController = GetComponent<CharacterController>();
+        rb2d = GetComponent<Rigidbody2D>();
         inputHandler = PlayerInputHandler.Instance;
         cameraTransform = Camera.main.transform.parent;
 
@@ -60,67 +55,66 @@ public class PlayerController : MonoBehaviour {
 
         currentMovement = moveDirection.normalized * speed;
 
-        characterController.Move(currentMovement * Time.deltaTime);
+        rb2d.transform.position += new Vector3(currentMovement.x, currentMovement.y, 0) * Time.deltaTime;
     }
 
     // Method to handle attacking
     void HandleAttacking() {
-        if(inputHandler.AttackTriggered) {
-            Debug.Log("Attacking");
-        }
-
         if (inputHandler.AttackTriggered && weaponEquipped != null) {
+            Debug.Log($"Attacking with weapon {weaponEquipped.name}");
             weaponEquipped.AttackWithEquipedWeapon();
-        } else if (weaponEquipped == null) {
-            Debug.Log("No Weapon component equipped");
         }
     }
 
     // Method to handle picking up things
     void HandlePickUp() {
-        // If the pick up button is pressed, log that the player is picking up
-        if(inputHandler.PickUpTriggered) {
-            Debug.Log("Picking Up");
-        }
-
         // If the player is near a weapon and the pick up button is pressed, pick up the weapon and set it as the weapon equipped and child to the player
-        if(inputHandler.PickUpTriggered && weaponToPickUp != null) {
-            Debug.Log("Picking Up Weapon");
-            weaponToPickUp.transform.SetParent(transform);
-            weaponToPickUp.transform.localPosition = new Vector2(1, 0);
-            Collider weaponCollider = weaponToPickUp.GetComponent<Collider>();
-            if(weaponCollider != null) {
-                weaponCollider.enabled = false;
-            }
-            if (weaponEquipped != null) {
+ 
+        if (inputHandler.PickUpTriggered && weaponToPickUp != null) {
+            if (weaponEquipped == null) {
+                // Equip the new weapon
+                EquipWeapon();
+            } else {
+                // Swap out the old weapon and drop it on the map
                 weaponEquipped.transform.SetParent(null);
-                weaponEquipped.GetComponent<Collider>().enabled = true;
-                weaponEquipped.transform.position = weaponToPickUp.transform.position;
+                weaponEquipped.GetComponent<Collider2D>().enabled = true;
 
-
+                // Equip the new weapon
+                EquipWeapon();
             }
-            weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
+            // Clear the reference to the weapon to pick up
             weaponToPickUp = null;
+        } else if (inputHandler.PickUpTriggered && weaponEquipped == null) {
+            Debug.Log("No weapon to pick up");
         }
+    }
 
-        
+    void EquipWeapon() {
+        if (weaponToPickUp != null) {
+            weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
+            if (weaponEquipped != null) {
+                weaponEquipped.transform.SetParent(transform);
+                weaponEquipped.transform.localPosition = new Vector2(1, 0);
+                weaponEquipped.transform.localRotation = Quaternion.identity;
+                Collider2D weaponCollider = weaponEquipped.GetComponent<Collider2D>();
+                if (weaponCollider != null) {
+                    weaponCollider.enabled = false;
+                }
+            } else {
+                Debug.LogError("Weapon component not found on weaponToPickUp");
+            }
+        }
     }
 
     // Method to handle scrolling
     void HandleScrolling() {
         // If the scroll value is not 0, log that the player is scrolling up or down
         if(inputHandler.ScrollValue != 0) {
-            if (inputHandler.ScrollValue > 0) {
-                Debug.Log("Scrolling Down");
-            } else {
-                Debug.Log("Scrolling Up");
-            }
         }
     }
 
     // Method to handle looking at the mouse position
     void HandleLooking() {
-        Debug.Log($"Looking at {inputHandler.LookInput}");
         Vector2 mousePosition = inputHandler.LookInput;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         lookDirection = mouseWorldPosition - transform.position;
@@ -141,13 +135,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     // OnTriggerEnter that are weapons and colliding with player to pick up 
-    private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Weapon")) {
-            weaponToPickUp = other.gameObject;
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Debug.Log("Collided with " + collision.name);
+        if(collision.CompareTag("Weapon")) {
+            weaponToPickUp = collision.gameObject;
         }
     }
     // OnTriggerExit that are weapons and not colliding with player reset weaponToPickUp
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit2D(Collider2D other) {
         if(other.CompareTag("Weapon")) {
             weaponToPickUp = null;
         }
