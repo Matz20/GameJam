@@ -58,6 +58,9 @@ TagManager:
   - name: Player
     uniqueID: 458718083
     locked: 0
+  - name: Arms
+    uniqueID: 694815881
+    locked: 0
   - name: Foreground
     uniqueID: 3919943125
     locked: 0

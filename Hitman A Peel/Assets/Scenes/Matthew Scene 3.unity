@@ -2326,9 +2326,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8313453988864807982, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313453988864807982, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 458718083
+      objectReference: {fileID: 0}
     - target: {fileID: 8865719845097246027, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
       propertyPath: m_Name
       value: John Slick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865719845097246027, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068110046751898968, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068110046751898968, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 694815881
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
