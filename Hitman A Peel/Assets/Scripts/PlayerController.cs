@@ -19,12 +19,15 @@ public class PlayerController : MonoBehaviour {
     private Vector2 currentMovement;
     // Variable for the weapon to pick up
     private GameObject weaponToPickUp;
+    // Variable for interacting with hideout
+    private Hideout currentHideout;
     // Variable for the weapon equipped
     private GameObject weaponEquipped;
     // Variable for the camera transform
     private Transform cameraTransform;
     // Variable for the look direction
     private Vector3 lookDirection;
+
 
     // Awake method to get the character controller and input handler and camera transform
     private void Awake() {
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour {
         HandleMovement();
         HandleAttacking();
         HandlePickUp();
+        HandleInteraction();
         HandleScrolling();
         HandleLooking();
         UpdateCameraPosition();
@@ -70,11 +74,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Method to handle picking up things
-    void HandlePickUp() {
-        // If the pick up button is pressed, log that the player is picking up
-        if(inputHandler.PickUpTriggered) {
-            Debug.Log("Picking Up");
-        }
+    void HandlePickUp() {        
 
         // If the player is near a weapon and the pick up button is pressed, pick up the weapon and set it as the weapon equipped and child to the player
         if(inputHandler.PickUpTriggered && weaponToPickUp != null) {
@@ -88,9 +88,26 @@ public class PlayerController : MonoBehaviour {
             weaponEquipped = weaponToPickUp;
             weaponToPickUp = null;
         }
-
-        
     }
+
+    void HandleInteraction()
+    {
+        // If the pick up button is pressed, log that the player is picking up
+        if(inputHandler.PickUpTriggered) {
+            if (weaponToPickUp != null) {
+                HandlePickUp();
+            }
+            else if (currentHideout != null) {
+                HidePlayer();
+            }
+        }            
+    }
+
+    void HidePlayer() {
+        Debug.Log("Player is hiding:))");
+        characterController.enabled = false;
+    }
+        
 
     // Method to handle scrolling
     void HandleScrolling() {
@@ -127,11 +144,17 @@ public class PlayerController : MonoBehaviour {
         if(other.CompareTag("Weapon")) {
             weaponToPickUp = other.gameObject;
         }
+        else if (other.CompareTag("Hideout")) {
+            currentHideout = other.GetComponent<Hideout>();
+        }
     }
     // OnTriggerExit that are weapons and not colliding with player reset weaponToPickUp
     private void OnTriggerExit(Collider other) {
         if(other.CompareTag("Weapon")) {
             weaponToPickUp = null;
+        }
+        else if (other.CompareTag("Hideout")) {
+            currentHideout = null;
         }
     }
 
