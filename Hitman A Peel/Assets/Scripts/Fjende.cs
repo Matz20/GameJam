@@ -4,41 +4,23 @@ using UnityEngine;
 
 public class Fjende : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 100f;
-    private float health;
-    SpriteRenderer spriteRenderer;
-    public HealthBar healthBar;
+[SerializeField] float maxHealth = 100f;
+private float health;
 
-
-    [SerializeField]
-    Sprite DeadBanana;
-    [SerializeField]
-    bool IsDead = false;
-    Animator animator;
-
+public HealthBar healthBar;
     private void Start()
     {
         health = maxHealth;
         healthBar.SetMaxHealth(100);
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        if(health <= 0)
-        {
-            IsDead = true;
-        }
-        if (IsDead)
-        {
-            animator.enabled = false;
-            spriteRenderer.sprite = DeadBanana;
-        }
     }
 
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
+  
 }
