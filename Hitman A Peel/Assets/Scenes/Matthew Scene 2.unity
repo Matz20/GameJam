@@ -181,6 +181,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disguiseLvl: 0
   state: 0
+--- !u!114 &62783000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62782983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f817e93228106aa40969a9f9957482ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &65650277
 GameObject:
   m_ObjectHideFlags: 0
@@ -8310,6 +8324,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8865719845097246027, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 62782999}
+    - targetCorrespondingSourceObject: {fileID: 8865719845097246027, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 62783000}
   m_SourcePrefab: {fileID: 100100000, guid: 3f373f47084d3144db43bab3fac5c474, type: 3}
 --- !u!1 &802035516
 GameObject:
@@ -22768,6 +22785,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1368635189335706815, guid: 689c437076676be4794807f097a0656c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1478110118}
+    - targetCorrespondingSourceObject: {fileID: 1368635189335706815, guid: 689c437076676be4794807f097a0656c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1478110119}
   m_SourcePrefab: {fileID: 100100000, guid: 689c437076676be4794807f097a0656c, type: 3}
 --- !u!1 &1396790939
 GameObject:
@@ -23092,6 +23112,20 @@ MonoBehaviour:
   maxY: 0
   randomSpots: 0
   direction: {x: 0, y: 0, z: 0}
+--- !u!114 &1478110119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478110117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307fe665b44f298419f63270cb3bac46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &1494431316
 GameObject:
   m_ObjectHideFlags: 0
@@ -23352,7 +23386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 638989967261027691, guid: a16b150fb68f27847b329fb9cfd2bf08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.23
+      value: -13.5
       objectReference: {fileID: 0}
     - target: {fileID: 638989967261027691, guid: a16b150fb68f27847b329fb9cfd2bf08, type: 3}
       propertyPath: m_LocalPosition.y
