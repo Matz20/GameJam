@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     }
 
     // Method to handle attacking
-    public void AttackWithEquipedWeapon(Vector3 aimDir) {
+    public void AttackWithEquipedWeapon() {
         if(Time.time >= nextTimeToFire) {
             nextTimeToFire = Time.time + 1.0f / fireRate;
 
@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
             if (projectileRigidbody != null) {
-                projectileRigidbody.velocity = aimDir.normalized * projectileSpeed;
+                projectileRigidbody.velocity = lookDirection.normalized * projectileSpeed;
             }
             
             StartCoroutine(DestroyProjectileAfterRange(projectile));

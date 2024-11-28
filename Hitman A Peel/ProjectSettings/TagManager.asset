@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Weapon
   - Enemy
+  - Hideout
   layers:
   - Default
   - TransparentFX
@@ -42,19 +43,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2020531375
-    locked: 0
-  - name: Player
-    uniqueID: 124377255
-    locked: 0
-  - name: Foreground
-    uniqueID: 3715682463
-    locked: 0
-  - name: New Layer 4
-    uniqueID: 2558612147
-    locked: 0
-  - name: New Layer 5
-    uniqueID: 2450246651
     locked: 0
