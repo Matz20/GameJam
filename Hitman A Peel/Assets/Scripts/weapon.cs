@@ -20,7 +20,6 @@ public class Weapon : MonoBehaviour
     // Variable for the weapon's next time to fire
     private float nextTimeToFire = 0.0f;
     private Vector3 lookDirection;
-    public Weapon weaponEquipped;
     private void Awake() {
         inputHandler = PlayerInputHandler.Instance;
     }
