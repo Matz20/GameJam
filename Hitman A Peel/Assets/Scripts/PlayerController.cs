@@ -3,12 +3,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     // Unity menu for setting the walk speed   
     [Header("Movement Speeds")]
     [SerializeField] private float walkSpeed = 3.0f;
-    
- 
+
+
     // Variable for the character controller
     private Rigidbody2D rb2d;
     // Variable for the player input handler
@@ -36,7 +37,8 @@ public class PlayerController : MonoBehaviour {
 
 
     // Awake method to get the character controller and input handler and camera transform
-    private void Awake() {
+    private void Awake()
+    {
         rb2d = GetComponent<Rigidbody2D>();
         inputHandler = PlayerInputHandler.Instance;
         cameraTransform = Camera.main.transform.parent;
@@ -44,8 +46,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Update method to handle movement, attacking, picking up, and scrolling
-    private void Update() {
-        if (inputHandler == null) {
+    private void Update()
+    {
+        if (inputHandler == null)
+        {
             Debug.LogError("PlayeInputHandler instance is not set");
             return;
         }
@@ -59,7 +63,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Method to handle movement
-    void HandleMovement() {
+    void HandleMovement()
+    {
         float xMovement = inputHandler.MoveInput.x;
         float yMovement = inputHandler.MoveInput.y;
 
@@ -73,22 +78,27 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Method to handle attacking
-    void HandleAttacking() {
-        if (inputHandler.AttackTriggered && weaponEquipped != null) {
+    void HandleAttacking()
+    {
+        if (inputHandler.AttackTriggered && weaponEquipped != null)
+        {
             Debug.Log($"Attacking with weapon {weaponEquipped.name}");
             weaponEquipped.AttackWithEquipedWeapon(lookDirection);
         }
     }
 
     // Method to handle picking up things
-    void HandlePickUp() {
+    void HandlePickUp()
+    {
         // If the player is near a weapon and the pick up button is pressed, pick up the weapon and set it as the weapon equipped and child to the player
-        if(inputHandler.PickUpTriggered && weaponToPickUp != null) {
+        if (inputHandler.PickUpTriggered && weaponToPickUp != null)
+        {
             Debug.Log("Picking Up Weapon");
             weaponToPickUp.transform.SetParent(transform);
             weaponToPickUp.transform.localPosition = new Vector2(1, 0);
             Collider weaponCollider = weaponToPickUp.GetComponent<Collider>();
-            if(weaponCollider != null) {
+            if (weaponCollider != null)
+            {
                 weaponCollider.enabled = false;
             }
             //if (weaponEquipped != null) {
@@ -103,52 +113,64 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void EquipWeapon() {
-        if (weaponToPickUp != null) {
+    void EquipWeapon()
+    {
+        if (weaponToPickUp != null)
+        {
             weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
-            if (weaponEquipped != null) {
+            if (weaponEquipped != null)
+            {
                 weaponEquipped.transform.SetParent(transform);
                 weaponEquipped.transform.localPosition = new Vector2(1, 0);
                 weaponEquipped.transform.localRotation = Quaternion.identity;
                 Collider2D weaponCollider = weaponEquipped.GetComponent<Collider2D>();
-                if (weaponCollider != null) {
+                if (weaponCollider != null)
+                {
                     weaponCollider.enabled = false;
                 }
-            } else {
+            }
+            else
+            {
                 Debug.LogError("Weapon component not found on weaponToPickUp");
             }
         }
     }
 
     // Method to handle scrolling
-    void HandleScrolling() {
+    void HandleScrolling()
+    {
         // If the scroll value is not 0, log that the player is scrolling up or down
-        if(inputHandler.ScrollValue != 0) {
+        if (inputHandler.ScrollValue != 0)
+        {
         }
     }
 
     // Method to handle looking at the mouse position
-    void HandleLooking() {
+    void HandleLooking()
+    {
         Vector2 mousePosition = inputHandler.LookInput;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         lookDirection = mouseWorldPosition - transform.position;
         lookDirection.z = 0;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         pointer.transform.rotation = Quaternion.Euler(0, 0, angle);
-        
-        if(angle >= -45 && angle < 45) //D direction
+
+        if (angle >= -45 && angle < 45) //D direction
         {
             animator.SetFloat("x", 1);
             animator.SetFloat("y", 0);
-        } else if (angle >= 45f && angle < 135f) // W direction
+        }
+        else if (angle >= 45f && angle < 135f) // W direction
         {
             animator.SetFloat("x", 0);
             animator.SetFloat("y", 1);
-        } else if (angle <= -135f || angle > 135f) // A direction
+        }
+        else if (angle <= -135f || angle > 135f) // A direction
         {
-            animator.SetFloat ("x", -1);
+            animator.SetFloat("x", -1);
             animator.SetFloat("y", 0);
-        } else if (angle < -45 && angle >= -135) // S Direction
+        }
+        else if (angle < -45 && angle >= -135) // S Direction
         {
             animator.SetFloat("x", 0);
             animator.SetFloat("y", -1);
@@ -156,22 +178,28 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Method to update the camera position to follow the player
-    void UpdateCameraPosition() {
-        if (cameraTransform != null) {
+    void UpdateCameraPosition()
+    {
+        if (cameraTransform != null)
+        {
             cameraTransform.position = new Vector3(transform.position.x, transform.position.y, cameraTransform.position.z);
         }
     }
 
     // OnTriggerEnter that are weapons and colliding with player to pick up 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         Debug.Log("Collided with " + collision.name);
-        if(collision.CompareTag("Weapon")) {
+        if (collision.CompareTag("Weapon"))
+        {
             weaponToPickUp = collision.gameObject;
         }
     }
     // OnTriggerExit that are weapons and not colliding with player reset weaponToPickUp
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.CompareTag("Weapon")) {
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Weapon"))
+        {
             weaponToPickUp = null;
         }
     }
