@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
     // Unity menu for setting the walk speed   
@@ -11,6 +13,8 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
+    // Variable for the weapon
+    private Weapon weapon;
     // Variable for the current movement
     private Vector2 currentMovement;
     // Variable for the weapon to pick up
@@ -19,15 +23,24 @@ public class PlayerController : MonoBehaviour {
     public Weapon weaponEquipped;
     // Variable for the camera transform
     private Transform cameraTransform;
+    float speed = 3f;
+
+    [SerializeField]
+    GameObject pointer;
+
+    Animator animator;
+
     // Variable for the look direction
     public Vector3 lookDirection;
+
+
 
     // Awake method to get the character controller and input handler and camera transform
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
         inputHandler = PlayerInputHandler.Instance;
         cameraTransform = Camera.main.transform.parent;
-
+        animator = GetComponent<Animator>();
     }
 
     // Update method to handle movement, attacking, picking up, and scrolling
@@ -47,7 +60,8 @@ public class PlayerController : MonoBehaviour {
 
     // Method to handle movement
     void HandleMovement() {
-        float speed = walkSpeed;
+        float xMovement = inputHandler.MoveInput.x;
+        float yMovement = inputHandler.MoveInput.y;
 
         // moveDirection is the input from the player
         Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
@@ -69,23 +83,23 @@ public class PlayerController : MonoBehaviour {
     // Method to handle picking up things
     void HandlePickUp() {
         // If the player is near a weapon and the pick up button is pressed, pick up the weapon and set it as the weapon equipped and child to the player
- 
-        if (inputHandler.PickUpTriggered && weaponToPickUp != null) {
-            if (weaponEquipped == null) {
-                // Equip the new weapon
-                EquipWeapon();
-            } else {
-                // Swap out the old weapon and drop it on the map
-                weaponEquipped.transform.SetParent(null);
-                weaponEquipped.GetComponent<Collider2D>().enabled = true;
-
-                // Equip the new weapon
-                EquipWeapon();
+        if(inputHandler.PickUpTriggered && weaponToPickUp != null) {
+            Debug.Log("Picking Up Weapon");
+            weaponToPickUp.transform.SetParent(transform);
+            weaponToPickUp.transform.localPosition = new Vector2(1, 0);
+            Collider weaponCollider = weaponToPickUp.GetComponent<Collider>();
+            if(weaponCollider != null) {
+                weaponCollider.enabled = false;
             }
-            // Clear the reference to the weapon to pick up
-            weaponToPickUp = null;
-        } else if (inputHandler.PickUpTriggered && weaponEquipped == null) {
-            Debug.Log("No weapon to pick up");
+            //if (weaponEquipped != null) {
+            //    weaponEquipped.transform.SetParent(null);
+            //    weaponEquipped.GetComponent<Collider>().enabled = true;
+            //    weaponEquipped.transform.position = weaponToPickUp.transform.position;
+
+
+            //}
+            //weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
+            //weaponToPickUp = null;
         }
     }
 
@@ -120,10 +134,24 @@ public class PlayerController : MonoBehaviour {
         lookDirection = mouseWorldPosition - transform.position;
         lookDirection.z = 0;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        if (weaponEquipped != null) {
-            weaponEquipped.SetLookDirection(lookDirection);
+        pointer.transform.rotation = Quaternion.Euler(0, 0, angle);
+        
+        if(angle >= -45 && angle < 45) //D direction
+        {
+            animator.SetFloat("x", 1);
+            animator.SetFloat("y", 0);
+        } else if (angle >= 45f && angle < 135f) // W direction
+        {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", 1);
+        } else if (angle <= -135f || angle > 135f) // A direction
+        {
+            animator.SetFloat ("x", -1);
+            animator.SetFloat("y", 0);
+        } else if (angle < -45 && angle >= -135) // S Direction
+        {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", -1);
         }
     }
 
