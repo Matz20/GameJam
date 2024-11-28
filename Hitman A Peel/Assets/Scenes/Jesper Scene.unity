@@ -226,14 +226,13 @@ MonoBehaviour:
   player: {fileID: 1712803670}
   targetRange: 5
   attackRange: 2
-  fireRate: 1
+  fireRate: 0.5
   moveSpots:
   - {fileID: 801167874}
   - {fileID: 1187002784}
   - {fileID: 812223291}
   - {fileID: 1845254481}
   - {fileID: 816319811}
-  fieldOfView: {fileID: 457920035}
 --- !u!50 &244819553
 Rigidbody2D:
   serializedVersion: 4

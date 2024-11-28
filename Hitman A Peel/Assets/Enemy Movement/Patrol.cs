@@ -9,7 +9,6 @@ public class Patrol : MonoBehaviour
         Roaming, 
         Chasing,
         Attacking
-
     }
     private State state;
     public float speed;
@@ -28,7 +27,7 @@ public class Patrol : MonoBehaviour
 
     private bool isPatroling;
 
-    [SerializeField] private FieldOfView fieldOfView;
+    //[SerializeField] private FieldOfView fieldOfView;
 
     private void Awake()
     {
@@ -55,6 +54,7 @@ public class Patrol : MonoBehaviour
             case State.Attacking:
                 if (Time.time > nextShootTime)
                 {
+                    lookAt(player.transform);
                     Debug.Log("Is attacking");
                     nextShootTime = Time.time + fireRate;
                     if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
@@ -76,14 +76,14 @@ public class Patrol : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = rotation;
-        fieldOfView.SetAimDirection(direction);
+       // fieldOfView.SetAimDirection(direction);
     }
     private void patroling()
     {
         FindTarget();
         lookAt(moveSpots[randomSpots]);
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpots].position, speed * Time.deltaTime);
-        fieldOfView.SetOrigin(transform.position);
+        //fieldOfView.SetOrigin(transform.position);
 
         if (Vector2.Distance(transform.position, moveSpots[randomSpots].position) < 0.2f)
         {
@@ -114,7 +114,7 @@ public class Patrol : MonoBehaviour
     {
         lookAt(player.transform);
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        fieldOfView.SetOrigin(transform.position);
+        //fieldOfView.SetOrigin(transform.position);
         Attack();
         if (Vector3.Distance(transform.position, player.transform.position) > targetRange)
         {
