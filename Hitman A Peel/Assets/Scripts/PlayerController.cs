@@ -13,19 +13,17 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
-<<<<<<< HEAD
     // Variable for the weapon
-    //private Weapon weapon;
-=======
->>>>>>> 7c8e5e237184b1fae0454ded28809a13ae3fabc9
+    private Weapon weapon;
     // Variable for the current movement
     private Vector2 currentMovement;
     // Variable for the weapon to pick up
     private GameObject weaponToPickUp;
     // Variable for the weapon equipped
-    //public Weapon weaponEquipped;
+    public Weapon weaponEquipped;
     // Variable for the camera transform
     private Transform cameraTransform;
+    float speed = 3f;
 
     [SerializeField]
     GameObject pointer;
@@ -53,7 +51,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         HandleMovement();
-        //HandleAttacking();
+        HandleAttacking();
         HandlePickUp();
         HandleScrolling();
         HandleLooking();
@@ -66,28 +64,6 @@ public class PlayerController : MonoBehaviour {
         float yMovement = inputHandler.MoveInput.y;
 
         // moveDirection is the input from the player
-<<<<<<< HEAD
-        Vector2 moveDirection = new Vector2(xMovement, yMovement);
-        currentMovement = moveDirection.normalized * walkSpeed;
-        characterController.Move(currentMovement * Time.deltaTime);
-
-        //The animation playing will be determined by xMovement and yMovement (Floats in range 0,1), with S_Walk, D_Walk and A_Walk being prioritized on angular walking
-        if (xMovement != 0 || yMovement != 0)
-        {
-            animator.SetBool("isWalking", true);
-            if (yMovement == 1 && xMovement == 0) // A_Walk
-            {
-                animator.SetFloat("y", 1f);
-                animator.SetFloat("x", 0);
-            }
-
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
-            animator.SetFloat("x", 0);
-            animator.SetFloat("y", -1);
-=======
         Vector2 inputDirection = new Vector2(inputHandler.MoveInput.x, inputHandler.MoveInput.y);
         Vector3 moveDirection = new Vector3(inputDirection.x, inputDirection.y);
 
@@ -101,27 +77,12 @@ public class PlayerController : MonoBehaviour {
         if (inputHandler.AttackTriggered && weaponEquipped != null) {
             Debug.Log($"Attacking with weapon {weaponEquipped.name}");
             weaponEquipped.AttackWithEquipedWeapon(lookDirection);
->>>>>>> 7c8e5e237184b1fae0454ded28809a13ae3fabc9
         }
     }
-
-    //// Method to handle attacking
-    //void HandleAttacking() {
-    //    if(inputHandler.AttackTriggered) {
-    //        Debug.Log("Attacking");
-    //    }
-
-    //    if (inputHandler.AttackTriggered && weaponEquipped != null) {
-    //        weaponEquipped.AttackWithEquipedWeapon();
-    //    } else if (weaponEquipped == null) {
-    //        Debug.Log("No Weapon component equipped");
-    //    }
-    //}
 
     // Method to handle picking up things
     void HandlePickUp() {
         // If the player is near a weapon and the pick up button is pressed, pick up the weapon and set it as the weapon equipped and child to the player
-<<<<<<< HEAD
         if(inputHandler.PickUpTriggered && weaponToPickUp != null) {
             Debug.Log("Picking Up Weapon");
             weaponToPickUp.transform.SetParent(transform);
@@ -139,25 +100,6 @@ public class PlayerController : MonoBehaviour {
             //}
             //weaponEquipped = weaponToPickUp.GetComponent<Weapon>();
             //weaponToPickUp = null;
-=======
- 
-        if (inputHandler.PickUpTriggered && weaponToPickUp != null) {
-            if (weaponEquipped == null) {
-                // Equip the new weapon
-                EquipWeapon();
-            } else {
-                // Swap out the old weapon and drop it on the map
-                weaponEquipped.transform.SetParent(null);
-                weaponEquipped.GetComponent<Collider2D>().enabled = true;
-
-                // Equip the new weapon
-                EquipWeapon();
-            }
-            // Clear the reference to the weapon to pick up
-            weaponToPickUp = null;
-        } else if (inputHandler.PickUpTriggered && weaponEquipped == null) {
-            Debug.Log("No weapon to pick up");
->>>>>>> 7c8e5e237184b1fae0454ded28809a13ae3fabc9
         }
     }
 
@@ -187,11 +129,6 @@ public class PlayerController : MonoBehaviour {
 
     // Method to handle looking at the mouse position
     void HandleLooking() {
-<<<<<<< HEAD
-        //Debug.Log($"Looking at {inputHandler.LookInput}");
-        //Debug.Log($"Player at {transform.position}");
-=======
->>>>>>> 7c8e5e237184b1fae0454ded28809a13ae3fabc9
         Vector2 mousePosition = inputHandler.LookInput;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         lookDirection = mouseWorldPosition - transform.position;
