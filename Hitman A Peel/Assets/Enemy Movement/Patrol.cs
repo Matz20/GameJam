@@ -53,7 +53,7 @@ public class Patrol : MonoBehaviour
             case State.Attacking:
                 
                     lookAt(player.transform);
-                    weaponEquipped.AttackWithEquipedWeapon();
+                    weaponEquipped.AttackWithEquipedWeapon(direction);
                     Debug.Log("Is attacking");
                     if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
                     {
