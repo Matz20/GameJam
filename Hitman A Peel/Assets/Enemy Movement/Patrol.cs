@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
-    private enum State
+    [SerializeField] private enum State
     {
         Roaming, 
         Chasing,
         Attacking
     }
-    private State state;
-    public float speed;
-    private float waitTime;
-    public float startWaitTime;
-    public Weapon weaponEquipped;
-    public GameObject player;
-    public float targetRange; 
-    public float attackRange;
-   
+    [SerializeField] private State state;
+    [SerializeField] private float speed;
+    [SerializeField] private float waitTime;
+    [SerializeField] private float startWaitTime;
+    [SerializeField] private Weapon weaponEquipped;
+    public GameObject hero; 
+    public Disguise dis;
+    [SerializeField] private int minDisLvl;
+    [SerializeField] private float targetRange;
+    [SerializeField] private float attackRange;
 
-    public Transform[] moveSpots;
-    private int randomSpots;
-    private Vector3 direction;
 
-    private bool isPatroling;
+    [SerializeField] private Transform[] moveSpots;
+    [SerializeField] private int randomSpots;
+    [SerializeField] private Vector3 direction;
+
 
     //[SerializeField] private FieldOfView fieldOfView;
 
@@ -37,7 +38,6 @@ public class Patrol : MonoBehaviour
     {
         waitTime = startWaitTime;
         randomSpots = Random.Range(0, moveSpots.Length);
-        isPatroling = true;
     }
 
     private void Update()
@@ -52,10 +52,10 @@ public class Patrol : MonoBehaviour
                 break;
             case State.Attacking:
                 
-                    lookAt(player.transform);
-                    weaponEquipped.AttackWithEquipedWeapon();
+                    lookAt(hero.transform);
+                    weaponEquipped.AttackWithEquipedWeapon(direction);
                     Debug.Log("Is attacking");
-                    if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
+                    if (Vector3.Distance(transform.position, hero.transform.position) > attackRange)
                     {
                         state = State.Chasing;
                     }
@@ -102,7 +102,7 @@ public class Patrol : MonoBehaviour
     private void FindTarget()
     {
         
-        if (Vector3.Distance(transform.position, player.transform.position) < targetRange)
+        if (Vector3.Distance(transform.position, hero.transform.position) < targetRange && dis.disguiseLvl < minDisLvl)
         {
             state = State.Chasing;
             
@@ -110,11 +110,11 @@ public class Patrol : MonoBehaviour
     } 
     private void Chasing()
     {
-        lookAt(player.transform);
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        lookAt(hero.transform);
+        transform.position = Vector2.MoveTowards(transform.position, hero.transform.position, speed * Time.deltaTime);
         //fieldOfView.SetOrigin(transform.position);
         Attack();
-        if (Vector3.Distance(transform.position, player.transform.position) > targetRange)
+        if (Vector3.Distance(transform.position, hero.transform.position) > targetRange)
         {
             state = State.Roaming;
 
@@ -122,7 +122,7 @@ public class Patrol : MonoBehaviour
     }
     private void Attack()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        if (Vector3.Distance(transform.position, hero.transform.position) < attackRange)
         {
             state = State.Attacking;
 

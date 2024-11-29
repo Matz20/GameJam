@@ -18,15 +18,14 @@ public class Weapon : MonoBehaviour
     // Variable for the player input handler
     private PlayerInputHandler inputHandler;
     // Variable for the weapon's next time to fire
-    private float nextTimeToFire = 0.0f;
-    private Vector3 lookDirection;
-    public Weapon weaponEquipped;
+    [SerializeField] private float nextTimeToFire = 0.0f;
+    [SerializeField]private Vector3 lookDirection;
     private void Awake() {
         inputHandler = PlayerInputHandler.Instance;
     }
 
     // Method to handle attacking
-    public void AttackWithEquipedWeapon() {
+    public void AttackWithEquipedWeapon(Vector3 aimDir) {
         if(Time.time >= nextTimeToFire) {
             nextTimeToFire = Time.time + 1.0f / fireRate;
 
@@ -34,7 +33,7 @@ public class Weapon : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
             if (projectileRigidbody != null) {
-                projectileRigidbody.velocity = lookDirection.normalized * projectileSpeed;
+                projectileRigidbody.velocity = aimDir.normalized * projectileSpeed;
             }
             
             StartCoroutine(DestroyProjectileAfterRange(projectile));
