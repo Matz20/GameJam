@@ -64,3 +64,6 @@ TagManager:
   - name: Super Foreground
     uniqueID: 215674991
     locked: 0
+  - name: NPC
+    uniqueID: 2775482735
+    locked: 0
