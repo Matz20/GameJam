@@ -9,6 +9,7 @@ TagManager:
   - Hideout
   - Projectile
   - BadProjectile
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
+  - Foreground
+  - Coins
+  - Floor
   - 
   - 
   - 
